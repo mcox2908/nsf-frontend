@@ -1,0 +1,48 @@
+<div class="card px-5">
+    <form [formGroup]="formDirection">
+
+        <div class="pb-4">
+            <span class="text-base text-400">Contacto relacionado</span>
+            <hr>
+        </div>
+
+        <!-- Inputs Datos Contacto -->
+        <div class="p-fluid grid">
+
+            <!-- Tipo de contacto -->
+            <div class="field col-12">
+                <span class="p-float-label">
+                    <p-dropdown [class]="validate('typeDirection')" [options]="typeDirection" [autoDisplayFirst]="false"
+                        optionLabel="description" formControlName="typeDirection" [showClear]="true"></p-dropdown>
+                    <label>Tipo de dirección</label>
+                </span>
+                <error-message [formControlError]="formDirection.controls['typeDirection']"></error-message>
+            </div>
+
+            <!-- Unidad de contacto -->
+            <!-- <div class="field col-12 md:col-6">
+                <span class="p-float-label">
+                    <p-dropdown [options]="unit" [autoDisplayFirst]="false" optionLabel="description" 
+                        formControlName="unit" [showClear]="true"></p-dropdown>
+                    <label>Unidad</label>
+                </span>
+            </div> -->
+
+            <!-- Dirección -->
+            <div class="field col-12 md:col-12">
+                <span class="p-float-label">
+                    <input [class]="validate('direction')" id="float-input" pInputText formControlName="direction">
+                    <label for="float-input">Dirección</label>
+                </span>
+                <error-message [formControlError]="formDirection.controls['direction']"></error-message>
+            </div>
+
+        </div>
+
+        <div class="col-12 text-center py-3">
+            <button pButton class="b-primary 4 w-3" label="Agregar" (click)="createDirection()">
+            </button>
+        </div>
+
+    </form>
+</div>

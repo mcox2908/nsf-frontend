@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap');
+
+:root {
+    --primary-color: red;
+    --secondary-color: black;
+    --third-color: #e2e2e2;
+    --text-name-color: #959595;
+}
+
+@font-face {
+    font-family: 'CarnasW03';
+    src: url('assets/fonts/CarnasW03-Light.woff') format('woff');
+}
+
+
+* {
+    font-family: 'CarnasW03';
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #f3f3f3;
+    width: 100%;
+    height: 100%;
+}
+
+hr {
+    background-color: #ddd;
+    height: 1px;
+    border: none;
+}
+
+.p-menubar {
+    padding: 1.5rem;
+    background: #e2e2e2;
+    text-align: center;
+}
+
+.p-dialog .p-dialog-header .p-dialog-title {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+// Tab View
+.p-tabview-nav {
+    justify-content: space-between;
+    background: transparent !important;
+    border-width: 0px !important;
+}
+
+.p-tabview .p-tabview-panels {
+    background: transparent;
+    padding-top: 2rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.p-highlight .p-tabview-nav-link {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: 1px solid !important;
+    border-radius: 100px !important;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    background: transparent;
+    border: none;
+    padding: 0.75rem 4rem;
+}
+
+.p-tabview .p-tabview-nav .p-tabview-ink-bar {
+    display: none;
+}
+
+// Image Icon
+.img-icon {
+    width: 40%;
+    height: auto;
+}
+
+// Buttons
+
+.b-primary {
+    background-color: #000000 !important;
+    border-radius: 100px;
+}
+
+.b-transparent {
+    background-color: transparent !important;
+    color: #000000 !important;
+    border: 1px solid !important;
+    border-radius: 100px;
+}
+
+.b-secondary {
+    background-color: #FF1D531F !important;
+    color: #FF1D53 !important;
+    border: 1px solid !important;
+    border-radius: 100px;
+}
+
+// Input Search
+
+.search {
+    border-radius: 100px;
+    border: none;
+    background-color: #1C1B1F1F;
+}
+
+// Card
+
+.p-card {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14);
+}
+
+.p-card-body {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+.point-active {
+    border-radius: 50%;
+    background-color: #35A700;
+    width: 1rem;
+    height: 1rem;
+}
+
+// Checkbox
+
+.p-checkbox .p-checkbox-box.p-highlight {
+    border-color: #FF1D53 !important;
+    background: #FF1D53 !important;
+}
+
+.p-paginator {
+    background: transparent;
+}
+
+// Dialog
+.p-confirm-dialog .p-dialog-content {
+    display: grid !important;
+    justify-items: center !important;
+}
+
+.p-dialog.p-confirm-dialog .p-confirm-dialog-icon {
+    font-size: 3rem;
+}
+
+.p-dialog.p-confirm-dialog .p-confirm-dialog-message {
+    margin-left: 0rem;
+    font-weight: bolder;
+    padding-top: 2rem;
+}
+
+.p-dialog .p-dialog-footer {
+    text-align: center !important;
+}
+
+.p-dialog .p-dialog-footer button {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: #000000 !important;
+    border-radius: 100px;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    box-shadow: 0 0 2px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 8px;
+    border: 3px solid #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #062b60;
+    transition-duration: 300ms;
+}

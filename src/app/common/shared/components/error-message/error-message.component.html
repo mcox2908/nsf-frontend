@@ -1,0 +1,11 @@
+<div *ngIf="formControlError.touched && formControlError.errors" class="text-xs font-semibold p-error block mt-1">
+
+    <span *ngIf="formControlError.errors['required']" @errorAnimation>
+        Este campo es requerido.
+    </span>
+
+    <span *ngIf="formControlError.errors['email']" @errorAnimation>
+        Verificar la dirección del email.
+    </span>
+
+</div>

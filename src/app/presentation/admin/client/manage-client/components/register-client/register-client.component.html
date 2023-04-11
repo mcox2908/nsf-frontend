@@ -1,0 +1,171 @@
+<div class="card px-5">
+    <form [formGroup]="formClient">
+
+        <div class="pb-4">
+            <h3 class="text-base my-0 font-normal">
+                Agregar
+                <span class="text-base text-400">Datos Facturación</span>
+            </h3>
+            <hr>
+        </div>
+
+        <!-- Inputs Datos Facturacion -->
+        <div class="p-fluid grid">
+
+            <!-- Moneda -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [class]="validate('typeCurrency')" [options]="coins" [autoDisplayFirst]="false"
+                        optionLabel="description" formControlName="typeCurrency" [showClear]="true"></p-dropdown>
+                    <label>Moneda</label>
+                </span>
+                <error-message [formControlError]="formClient.controls['typeCurrency']"></error-message>
+            </div>
+
+            <!-- Grupo Empresarial/Categoria Cliente -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [class]="validate('businessGroup')" [options]="businessGroups" inputId="dropdown" [autoDisplayFirst]="false"
+                        optionLabel="description" formControlName="businessGroup" [showClear]="true"></p-dropdown>
+                    <label for="dropdown">Grupo Empresarial o Categoria Cliente</label>
+                    <error-message [formControlError]="formClient.controls['businessGroup']"></error-message>
+                </span>
+            </div>
+
+            <!-- Sector Economico -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [class]="validate('codeEconomicSector')" [options]="economicSector" inputId="dropdown" [autoDisplayFirst]="false"
+                        optionLabel="description" formControlName="codeEconomicSector" [showClear]="true"></p-dropdown>
+                    <label for="dropdown">Sector Económico</label>
+                    <error-message [formControlError]="formClient.controls['codeEconomicSector']"></error-message>
+                </span>
+            </div>
+
+        </div>
+
+        <div class="pb-4">
+            <h3 class="text-base my-0 font-normal">
+                Agregar
+                <span class="text-base text-400">Datos Operativos</span>
+            </h3>
+            <hr>
+        </div>
+
+        <!-- Inputs Datos Operativos -->
+        <div class="p-fluid grid">
+
+            <!-- Tipo documento identidad -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [class]="validate('typeDocumentIdentity')" [options]="typeDocumentIdenty" inputId="dropdown" [autoDisplayFirst]="false"
+                        optionLabel="description" formControlName="typeDocumentIdentity"
+                        [showClear]="true"></p-dropdown>
+                    <label for="dropdown">Tipo Documento Identidad</label>
+                </span>
+                <error-message [formControlError]="formClient.controls['typeDocumentIdentity']"></error-message>
+            </div>
+
+            <!-- Nro. Documento Identidad -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input [class]="validate('numberDocumentIdentity')" id="float-input" pInputText formControlName="numberDocumentIdentity">
+                    <label for="float-input">Nro. Documento Identidad</label>
+                </span>
+                <error-message [formControlError]="formClient.controls['numberDocumentIdentity']"></error-message>
+            </div>
+
+            <!-- Razon Social / Nombre Completo -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input id="float-input" pInputText formControlName="companyName">
+                    <label for="float-input">Razon Social | Nombre Completo</label>
+                </span>
+            </div>
+
+            <!-- Nombre comercial -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input id="float-input" pInputText formControlName="tradeName">
+                    <label for="float-input">Nombre comercial</label>
+                </span>
+            </div>
+
+            <!-- Telefono -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <input [class]="validate('phone')" id="float-input" pInputText formControlName="phone">
+                    <label for="float-input">Teléfono</label>
+                </span>
+                <error-message [formControlError]="formClient.controls['phone']"></error-message>
+            </div>
+
+            <!-- Holding -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label p-input-icon-right">
+                    <p-dropdown [options]="holding" inputId="dropdown" [autoDisplayFirst]="false"
+                        optionLabel="description" formControlName="holding" [showClear]="true"
+                        [filter]="true"></p-dropdown>
+                    <label for="dropdown">Holding</label>
+                </span>
+            </div>
+
+            <!-- Segmentación -->
+            <div class="field col-12 md:col-4">
+                <span class="p-float-label">
+                    <p-dropdown [options]="segmentation" inputId="dropdown" [autoDisplayFirst]="false"
+                        optionLabel="description" formControlName="codeSegmentation" [showClear]="true"></p-dropdown>
+                    <label for="dropdown">Segmentación</label>
+                </span>
+            </div>
+
+            <!-- Comentarios de cliente -->
+            <div class="field col-12 md:col-8">
+                <span class="p-float-label">
+                  <textarea id="float-input" rows="2" cols="30" pInputTextarea formControlName="comment"></textarea>
+                    <label for="float-input">Comentarios de cliente</label>
+                </span>
+            </div>
+
+            <!-- Migración SAP -->
+            <!-- <div class="field col-12 md:col-4 text-center">
+                <div class="flex-row">
+                    <p-checkbox formControlName="migrateSap" class="checkbox" [binary]="true"></p-checkbox>
+                    <label class="pl-2">Migrar Información Sap</label>
+                </div>
+            </div> -->
+
+            <!-- Cuenta Fedex -->
+            <div class="field col-12 md:col-4" *ngIf="showInputSap()">
+                <span class="p-float-label">
+                    <input id="cuentaFedex" type="text" pInputText formControlName="accountFedex">
+                    <label for="cuentaFedex">Cuenta FEDEX</label>
+                </span>
+            </div>
+
+            <!--Estado-->
+            <div class="flex-column col-12 md:col-4" *ngIf="showInputSap()">
+                <span class="p-float-label">
+                    <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" optionLabel="name"
+                        formControlName="statusClient"></p-dropdown>
+                    <label for="dropdown">Estado</label>
+                </span>
+            </div>
+
+            <!-- Autorizar Fedex-->
+            <div class="field col-12 md:col-4 text-center">
+                <div class="flex-row" *ngIf="showInputSap()">
+                    <p-checkbox formControlName="accountAuthorizeFedex" [binary]="true"></p-checkbox>
+                    <label class="pl-2">Autorizar Fedex</label>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-12 text-center py-3">
+            <button (click)="registerClient()" pButton class="b-primary px-5 py-2" label="Registrar">
+            </button>
+        </div>
+
+    </form>
+</div>
